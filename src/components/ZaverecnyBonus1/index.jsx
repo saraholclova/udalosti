@@ -6,9 +6,18 @@ Zadání: Předstírejme, že na stránce je složitý formulář, do kterého u
 */
 
 export const ZaverecnyBonus1 = () => {
+  const klikOdkaz = (event) => {
+    if (!confirm('Opravdu chcete odejít na jinou stránku?')) {
+      event.preventDefault();
+    }
+  };
+
   return (
     <>
-      Odkaz: <a href="https://www.czechitas.cz/">www.czechitas.cz</a>
+      Odkaz:{' '}
+      <a onClick={klikOdkaz} href="https://www.czechitas.cz/">
+        www.czechitas.cz
+      </a>
       <hr />
       Formulář:
       <form>
